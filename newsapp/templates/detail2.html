@@ -1,0 +1,24 @@
+{% extends 'base3.html' %}
+
+{% block title %}Photo Detail{% endblock %}
+
+{% block contents %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col offset-3">
+            <h2><br><br>{{object.title}}</h2>
+            <p>{{object.comment}}</p>
+            <br>
+            <p>{{object.posted_at}}に投稿</p>
+            <p><a href="{% url 'newsapp:index' %}">HOMEはこちら</a></p>
+            <p><img src="{{ object.image.url }}" width="500" height="500"></p>
+            {% if request.user == object.user %}
+            <form meerhod="post">
+                <a href="{% url 'newsapp:news_delete' object.pk %}" class="btn btn-primary my-2">削除する</a>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base3.html' %}
+
+{% block title %}Post{% endblock %}
+
+{% block header %}
+<h1><br><br>投稿ページ</h1>
+{% endblock %}
+
+{% block contents %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col offset-2">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <th>カテゴリ</th>
+                        <td>{{ form.category }}</td>
+                    </tr>
+                    <tr>
+                        <th>タイトル</th>
+                        <td>{{ form.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>コメント</th>
+                        <td>{{ form.comment }}</td>
+                    </tr>
+                    <tr>
+                        <th>画像1</th>
+                        <td>{{ form.image }}</td>
+                    </tr>
+                </table>
+                <hr>
+                <button type="submit">投稿する</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
