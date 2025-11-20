@@ -10921,5 +10921,8 @@ header.masthead .bg-circle-4 {
   }
 }
 .button1{
-  background-color: transparent;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
